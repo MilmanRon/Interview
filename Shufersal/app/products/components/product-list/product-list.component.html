@@ -1,0 +1,5 @@
+<div class="container bg-light rounded shadow-sm p-3">
+    @for (product of productService.productsSig(); track $index) {
+        <app-product-item [product]="product"></app-product-item>
+    }
+</div>

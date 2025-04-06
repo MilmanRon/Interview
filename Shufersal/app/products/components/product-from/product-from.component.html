@@ -1,0 +1,42 @@
+<div class="container bg-light rounded shadow-sm">
+  <form class="m-3 p-3" [formGroup]="productForm" (ngSubmit)="addProduct()">
+    <div class="mb-3 p-1">
+      <label for="name" class="form-label">Name</label>
+      <input
+        id="name"
+        type="text"
+        class="form-control"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="mb-3 p-1">
+      <label for="description" class="form-label">Description</label>
+      <input
+        id="description"
+        type="text"
+        class="form-control"
+        formControlName="description"
+      />
+    </div>
+
+    <div class="mb-3 p-1">
+      <label for="price" class="form-label">Price</label>
+      <input
+        id="price"
+        type="number"
+        class="form-control"
+        formControlName="price"
+      />
+    </div>
+
+    <div class="text-center p-1">
+      <button type="submit" class="btn btn-primary">Add Product</button>
+    </div>
+  </form>
+</div>
+@if (productsService.errorSig()) {
+<div class="container text-center pb-3">
+  <h5 class="text-danger">Error adding product !</h5>
+</div>
+}

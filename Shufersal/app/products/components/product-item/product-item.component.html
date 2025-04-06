@@ -1,0 +1,9 @@
+<div class="container p-1 my-3 d-flex rounded shadow-sm item" (click)="deleteProduct()">
+    <div class="ms-2">
+        <h5 class="m-1">{{product().name}}</h5>
+        <p class="m-1">{{product().description}}</p>
+    </div>
+    <div class="align-self-center ms-auto p-3">
+        {{product().price}}
+    </div>
+</div>
