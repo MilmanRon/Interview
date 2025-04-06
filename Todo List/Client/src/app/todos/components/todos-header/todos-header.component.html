@@ -1,0 +1,8 @@
+<div class="container">
+  <input 
+    class="form-control mt-5" 
+    autoFocus 
+    [value]="text" 
+    (keyup)="changeText($event)"
+    (keyup.enter)="addTodo()"/>
+</div>

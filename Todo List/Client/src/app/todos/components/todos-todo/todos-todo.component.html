@@ -1,0 +1,24 @@
+<div
+  class="container my-2"
+  [ngClass]="{
+    'bg-info-subtle': isEditing()
+  }"
+>
+  @if (isEditing()) {
+  <input
+    [value]="editingText"
+    (keyup)="changeText($event)"
+    (keyup.enter)="changeTodo()"
+  />
+  }@else {
+  <input
+    type="checkbox"
+    [checked]="todo().isCompleted"
+    (change)="toggleTodo()"
+  />
+  <label (dblclick)="setTodoInEditMode()" [ngClass]="{'text-decoration-line-through': todo().isCompleted}">
+    {{ todo().text }}
+  </label>
+  <button class="btn btn-danger mx-2" (click)="removeTodo()">X</button>
+  }
+</div>
