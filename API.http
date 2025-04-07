@@ -1,0 +1,39 @@
+### Variables
+@baseUrl = http://localhost:5004
+@apiVersion = v1
+@contentType = application/json
+
+### Get all products
+GET {{baseUrl}}/api/{{apiVersion}}/products
+Accept: {{contentType}}
+
+### Get product by ID
+@productId = 1
+GET {{baseUrl}}/api/{{apiVersion}}/products/{{productId}}
+Accept: {{contentType}}
+
+### Add new product
+POST {{baseUrl}}/api/{{apiVersion}}/products
+Content-Type: {{contentType}}
+{
+  "name": "New Product",
+  "description": "This is a test product",
+  "price": 19.99
+}
+
+### Update product
+@updateProductId = 1
+PUT {{baseUrl}}/api/{{apiVersion}}/products/{{updateProductId}}
+Content-Type: {{contentType}}
+{
+  "name": "Updated Product",
+  "description": "This product has been updated",
+  "price": 29.99
+}
+
+### Delete product
+@deleteProductId = 1
+DELETE {{baseUrl}}/api/{{apiVersion}}/products/{{deleteProductId}}
+
+###
+GET {{baseUrl}}/api/{{apiVersion}}/products/search?query=abc
